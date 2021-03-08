@@ -41,23 +41,23 @@
       </div>
     </div>
     <script>
-      // let params = new URLSearchParams(window.location.search);
+      let params = new URLSearchParams(window.location.search);
 
-      // document
-      //   .getElementsByTagName("a")[0]
-      //   .setAttribute("href", params.get("link"));
+      document
+        .getElementsByTagName("a")[0]
+        .setAttribute("href", params.get("link"));
 
-      // let countDown = 3;
-      // setInterval(function () {
-      //   if (countDown > -1) {
-      //     document.querySelector(".countdown").textContent = countDown;
-      //     countDown--;
-      //   }
-      // }, 1000);
+      let countDown = 3;
+      setInterval(function () {
+        if (countDown > -1) {
+          document.querySelector(".countdown").textContent = countDown;
+          countDown--;
+        }
+      }, 1000);
 
-      // setTimeout(function () {
-      //   window.top.location.href = params.get("redirect");
-      // }, 3000);
+      setTimeout(function () {
+        window.top.location.href = params.get("redirect");
+      }, 3000);
     </script>
   </body>
 </html>
