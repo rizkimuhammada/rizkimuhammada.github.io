@@ -1,51 +1,59 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Left4code</title>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-        <style>
-            body {
-                font-family: 'Roboto', sans-serif;
-                font-weight: 400;
-                color: #090910;
-                font-size: 18px;
-                font-weight: 500;
-                text-align: center;
-            }
-            .container {
-                height: 100vh;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            .previewer {
-                max-width: 80%;
-            }
-        </style>
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    </head>
-    <body>
-        <div class="container">
-            <div class="previewer">
-                Redirecting to live preview in <span class="countdown">3</span> seconds, please wait. <a style="color: #1C3FAA;" href="" target="blank">Click here if you are not redirected in 3 seconds.</a>
-            </div>
-        </div>
-        <script>
-            let params = new URLSearchParams(window.location.search)
-            
-            $('a').attr('href', params.get('link'))
-            
-            let countDown = 3
-            setInterval(function() {
-                if (countDown > -1) {
-                    $('.countdown').html(countDown)
-                    countDown--
-                }
-            }, 1000)
-            
-            setTimeout(function() {
-                window.top.location.href = params.get('redirect')
-            }, 3000)
-        </script>
-    </body>
+  <head>
+    <title>Left4code</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        color: #090910;
+        font-size: 18px;
+        font-weight: 500;
+        text-align: center;
+      }
+      .container {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .previewer {
+        max-width: 80%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="previewer">
+        Redirecting to live preview in <span class="countdown">3</span> seconds,
+        please wait.
+        <a style="color: #1c3faa" href="" target="blank"
+          >Click here if you are not redirected in 3 seconds.</a
+        >
+      </div>
+    </div>
+    <script>
+      let params = new URLSearchParams(window.location.search);
+
+      document
+        .getElementsByTagName("a")[0]
+        .setAttribute("href", params.get("link"));
+
+      let countDown = 3;
+      setInterval(function () {
+        if (countDown > -1) {
+          document.querySelector(".countdown").textContent = countDown;
+          countDown--;
+        }
+      }, 1000);
+
+      setTimeout(function () {
+        window.top.location.href = params.get("redirect");
+      }, 3000);
+    </script>
+  </body>
 </html>
