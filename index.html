@@ -10,10 +10,11 @@
       body {
         font-family: "Roboto", sans-serif;
         font-weight: 400;
-        color: #090910;
+        color: #98a2c7;
         font-size: 18px;
         font-weight: 500;
         text-align: center;
+        background: #060d27;
       }
       .container {
         height: 100vh;
@@ -24,6 +25,9 @@
       .previewer {
         max-width: 80%;
       }
+      a {
+        color: #bdc2d6;
+      }
     </style>
   </head>
   <body>
@@ -31,29 +35,29 @@
       <div class="previewer">
         Redirecting to live preview in <span class="countdown">3</span> seconds,
         please wait.
-        <a style="color: #1c3faa" href="" target="blank"
+        <a href="" target="blank"
           >Click here if you are not redirected in 3 seconds.</a
         >
       </div>
     </div>
     <script>
-      let params = new URLSearchParams(window.location.search);
+      // let params = new URLSearchParams(window.location.search);
 
-      document
-        .getElementsByTagName("a")[0]
-        .setAttribute("href", params.get("link"));
+      // document
+      //   .getElementsByTagName("a")[0]
+      //   .setAttribute("href", params.get("link"));
 
-      let countDown = 3;
-      setInterval(function () {
-        if (countDown > -1) {
-          document.querySelector(".countdown").textContent = countDown;
-          countDown--;
-        }
-      }, 1000);
+      // let countDown = 3;
+      // setInterval(function () {
+      //   if (countDown > -1) {
+      //     document.querySelector(".countdown").textContent = countDown;
+      //     countDown--;
+      //   }
+      // }, 1000);
 
-      setTimeout(function () {
-        window.top.location.href = params.get("redirect");
-      }, 3000);
+      // setTimeout(function () {
+      //   window.top.location.href = params.get("redirect");
+      // }, 3000);
     </script>
   </body>
 </html>
